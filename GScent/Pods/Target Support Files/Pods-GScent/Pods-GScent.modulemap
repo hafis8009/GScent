@@ -1,0 +1,6 @@
+framework module Pods_GScent {
+  umbrella header "Pods-GScent-umbrella.h"
+
+  export *
+  module * { export * }
+}
