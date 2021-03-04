@@ -14,6 +14,8 @@
 		2C6CCA2C25F15BDC00D905B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C6CCA2B25F15BDC00D905B9 /* Assets.xcassets */; };
 		2C6CCA2F25F15BDC00D905B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C6CCA2D25F15BDC00D905B9 /* LaunchScreen.storyboard */; };
 		2C6CCA3A25F15BDC00D905B9 /* GScentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CCA3925F15BDC00D905B9 /* GScentTests.swift */; };
+		3028F686483900B1B3F0C2B1 /* Pods_GScentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8761989E86CE7992F22386D7 /* Pods_GScentTests.framework */; };
+		F67C50A62EAF641F28BB15F7 /* Pods_GScent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4965E2A77D4CCC13DDAFEF9 /* Pods_GScent.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B17CA0A7E00EE058B18002F /* Pods-GScentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GScentTests.release.xcconfig"; path = "Target Support Files/Pods-GScentTests/Pods-GScentTests.release.xcconfig"; sourceTree = "<group>"; };
+		15B6CBDBFFFA73142B63972B /* Pods-GScent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GScent.release.xcconfig"; path = "Target Support Files/Pods-GScent/Pods-GScent.release.xcconfig"; sourceTree = "<group>"; };
+		28816416398BF2733FA775F8 /* Pods-GScent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GScent.debug.xcconfig"; path = "Target Support Files/Pods-GScent/Pods-GScent.debug.xcconfig"; sourceTree = "<group>"; };
 		2C6CCA1F25F15BDA00D905B9 /* GScent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GScent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6CCA2225F15BDA00D905B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C6CCA2425F15BDA00D905B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +43,9 @@
 		2C6CCA3525F15BDC00D905B9 /* GScentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GScentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6CCA3925F15BDC00D905B9 /* GScentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GScentTests.swift; sourceTree = "<group>"; };
 		2C6CCA3B25F15BDC00D905B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A391F26AC4D2242650AB289 /* Pods-GScentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GScentTests.debug.xcconfig"; path = "Target Support Files/Pods-GScentTests/Pods-GScentTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8761989E86CE7992F22386D7 /* Pods_GScentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GScentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4965E2A77D4CCC13DDAFEF9 /* Pods_GScent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GScent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F67C50A62EAF641F28BB15F7 /* Pods_GScent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3028F686483900B1B3F0C2B1 /* Pods_GScentTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +74,8 @@
 				2C6CCA2125F15BDA00D905B9 /* GScent */,
 				2C6CCA3825F15BDC00D905B9 /* GScentTests */,
 				2C6CCA2025F15BDA00D905B9 /* Products */,
+				2C8D7F5BAA67A232D8B9FD64 /* Pods */,
+				7556100C6863ABC6D9FA96E6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +111,27 @@
 			path = GScentTests;
 			sourceTree = "<group>";
 		};
+		2C8D7F5BAA67A232D8B9FD64 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				28816416398BF2733FA775F8 /* Pods-GScent.debug.xcconfig */,
+				15B6CBDBFFFA73142B63972B /* Pods-GScent.release.xcconfig */,
+				3A391F26AC4D2242650AB289 /* Pods-GScentTests.debug.xcconfig */,
+				0B17CA0A7E00EE058B18002F /* Pods-GScentTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7556100C6863ABC6D9FA96E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4965E2A77D4CCC13DDAFEF9 /* Pods_GScent.framework */,
+				8761989E86CE7992F22386D7 /* Pods_GScentTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +139,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C6CCA3E25F15BDC00D905B9 /* Build configuration list for PBXNativeTarget "GScent" */;
 			buildPhases = (
+				466F97EBD2B6B31BA387A878 /* [CP] Check Pods Manifest.lock */,
 				2C6CCA1B25F15BDA00D905B9 /* Sources */,
 				2C6CCA1C25F15BDA00D905B9 /* Frameworks */,
 				2C6CCA1D25F15BDA00D905B9 /* Resources */,
@@ -123,9 +157,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C6CCA4125F15BDC00D905B9 /* Build configuration list for PBXNativeTarget "GScentTests" */;
 			buildPhases = (
+				03F33943B0571E25DFDE70B5 /* [CP] Check Pods Manifest.lock */,
 				2C6CCA3125F15BDC00D905B9 /* Sources */,
 				2C6CCA3225F15BDC00D905B9 /* Frameworks */,
 				2C6CCA3325F15BDC00D905B9 /* Resources */,
+				725F91BE6A25477188CD024E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,6 +230,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03F33943B0571E25DFDE70B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GScentTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		466F97EBD2B6B31BA387A878 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GScent-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		725F91BE6A25477188CD024E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GScentTests/Pods-GScentTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GScentTests/Pods-GScentTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GScentTests/Pods-GScentTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2C6CCA1B25F15BDA00D905B9 /* Sources */ = {
@@ -360,6 +460,7 @@
 		};
 		2C6CCA3F25F15BDC00D905B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28816416398BF2733FA775F8 /* Pods-GScent.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +479,7 @@
 		};
 		2C6CCA4025F15BDC00D905B9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15B6CBDBFFFA73142B63972B /* Pods-GScent.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -396,6 +498,7 @@
 		};
 		2C6CCA4225F15BDC00D905B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A391F26AC4D2242650AB289 /* Pods-GScentTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -418,6 +521,7 @@
 		};
 		2C6CCA4325F15BDC00D905B9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B17CA0A7E00EE058B18002F /* Pods-GScentTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
