@@ -70,6 +70,17 @@ class DashboardSectionModel: Decodable {
             }
         }
     }
+    
+    func columnModel(for indexPath: IndexPath) -> ColumnItemModel? {
+        guard let rowType = rowType else { return nil }
+        let index = indexPath.row
+        switch rowType {
+        case .image, .text:
+            return columns?[index]
+        case .customSlider:
+            return (columns?.first as? SliderColumnItemModel)?.slides?[index]
+        }
+    }
 }
 
 extension ColumnItemType {

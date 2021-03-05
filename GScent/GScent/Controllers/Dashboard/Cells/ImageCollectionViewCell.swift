@@ -9,5 +9,12 @@
 import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
-    
+    @IBOutlet var imageView: AutoLoadImageView!
+}
+
+extension ImageCollectionViewCell: CollectionViewCellCustomizable {
+    func customize(with columnItem: ColumnItemModel, indexPath: IndexPath) {
+        guard let imageModel = columnItem as? ImageColumnItemModel else { return }
+        imageView.loadImage(fromUrl: imageModel.imageUrl!.absoluteString, cache: imageCache)
+    }
 }

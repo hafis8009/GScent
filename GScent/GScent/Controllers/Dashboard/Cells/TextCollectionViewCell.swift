@@ -11,3 +11,9 @@ import UIKit
 class TextCollectionViewCell: UICollectionViewCell {
     
 }
+
+extension TextCollectionViewCell: CollectionViewCellCustomizable {
+    func customize(with columnItem: ColumnItemModel, indexPath: IndexPath) {
+        
+    }
+}

@@ -28,8 +28,22 @@
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qFC-K5-mhe">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4F2-AV-WYF" customClass="AutoLoadImageView" customModule="GScent" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        </imageView>
+                                    </subviews>
                                     <color key="backgroundColor" red="0.92941176469999998" green="0.1215686275" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="4F2-AV-WYF" secondAttribute="bottom" id="5ip-yf-0Gs"/>
+                                        <constraint firstItem="4F2-AV-WYF" firstAttribute="leading" secondItem="qFC-K5-mhe" secondAttribute="leading" id="kBB-8U-xqy"/>
+                                        <constraint firstAttribute="trailing" secondItem="4F2-AV-WYF" secondAttribute="trailing" id="sqA-hn-Bvx"/>
+                                        <constraint firstItem="4F2-AV-WYF" firstAttribute="top" secondItem="qFC-K5-mhe" secondAttribute="top" id="wBn-gE-LC0"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="imageView" destination="4F2-AV-WYF" id="15h-9a-tuC"/>
+                                </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TextCollectionViewCell" id="qTM-3W-bRk" customClass="TextCollectionViewCell" customModule="GScent" customModuleProvider="target">
                                 <rect key="frame" x="143" y="0.0" width="128" height="128"/>
