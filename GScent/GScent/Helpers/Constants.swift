@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // TODO : Localise all below constant texts
 struct UIStrings {
@@ -18,3 +19,5 @@ struct UIStrings {
 struct Endpoints {
     static let getDashboardItems = NetworkEndpointModel(baseUrl: "http://goldenscent.com", path: "getDashboardItems", offlineFileName: "dashboardItems")
 }
+
+let imageCache = NSCache<NSString, UIImage>()
