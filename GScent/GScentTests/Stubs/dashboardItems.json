@@ -94,14 +94,14 @@
                      "color":"#ffffff"
                   },
                   "font-color":"#000000",
-                  "font-size":"12",
+                  "font-size":12,
                   "font":"Gilroy-Bold",
                   "content":"Makeup"
                },
                {
                   "type":"text",
                   "font-color":"#000000",
-                  "font-size":"12",
+                  "font-size":12,
                   "font":"Gilroy-Bold",
                   "content":"Skincare",
                   "background":{
@@ -111,7 +111,7 @@
                {
                   "type":"text",
                   "font-color":" #000000",
-                  "font-size":"12",
+                  "font-size":12,
                   "font":"Gilroy-Bold",
                   "content":"Hair & Body",
                   "background":{
