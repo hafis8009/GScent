@@ -34,6 +34,6 @@ extension String {
     }
     
     var asColor: UIColor? {
-        return .black
+        return UIColor(hex: self)
     }
 }
