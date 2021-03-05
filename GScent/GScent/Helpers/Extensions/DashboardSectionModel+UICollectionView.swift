@@ -11,15 +11,58 @@ import UIKit
 
 extension DashboardSectionModel {
     func createCollectionLayoutSection() -> NSCollectionLayoutSection {
-        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1/1), heightDimension: .fractionalHeight(1)))
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: layoutItemFractionalWidth, heightDimension: layoutItemFractionalHeight))
         item.contentInsets.trailing = 0
         item.contentInsets.bottom = 20
         item.contentInsets.leading = 0
 
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(200)), subitems: [item])
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: layoutGroupFractionalWidth, heightDimension: layoutGroupFractionalHeight), subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = scrollingBehaviour
         
         return section
+    }
+    
+    private var layoutItemFractionalWidth: NSCollectionLayoutDimension {
+        guard let rowType = rowType else { return .fractionalWidth(1.0) }
+        switch rowType {
+        case .image, .text:
+            var columnCount = columns?.count ?? 1
+            if columnCount > 3 {
+                columnCount = 3
+            }
+            return .fractionalWidth(1/(CGFloat(columnCount)))
+        case .customSlider:
+            return .fractionalWidth(1.0)
+        }
+    }
+    
+    private var layoutItemFractionalHeight: NSCollectionLayoutDimension {
+        return .fractionalHeight(1)
+    }
+    
+    private var layoutGroupFractionalWidth: NSCollectionLayoutDimension {
+        guard let rowType = rowType else { return .fractionalWidth(1.0) }
+        switch rowType {
+        case .image, .text:
+            return .fractionalWidth(1.0)
+        case .customSlider:
+            return .fractionalWidth(0.8)
+        }
+    }
+    
+    private var layoutGroupFractionalHeight: NSCollectionLayoutDimension {
+        return .estimated(CGFloat(height))
+    }
+    
+    private var scrollingBehaviour: UICollectionLayoutSectionOrthogonalScrollingBehavior {
+        guard let rowType = rowType else { return .none }
+        switch rowType {
+        case .customSlider:
+            return .continuous
+        default:
+            return .none
+        }
     }
 }

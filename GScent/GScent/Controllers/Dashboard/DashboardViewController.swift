@@ -100,7 +100,7 @@ extension DashboardViewController {
         let sectionModel = dashboardDataSource![indexPath.section]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: sectionModel.cellID, for: indexPath)
         
-        cell.contentView.backgroundColor = .white
+        //cell.contentView.backgroundColor = .red
         return cell
     }
 }
