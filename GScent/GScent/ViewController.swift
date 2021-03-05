@@ -13,8 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let client = NetworkClient(endpoint: Endpoints.getDashboardItems)
+        let dashboardAdapter = DashboardNetworkAdapter(networkClient: client)
+        dashboardAdapter.getDashboardItems() { sections, error in
+            print(sections)
+        }
     }
-
-
 }
 
