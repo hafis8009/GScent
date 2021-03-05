@@ -46,7 +46,7 @@ extension DashboardSectionModel {
         case .image, .text:
             return .fractionalWidth(1.0)
         case .customSlider:
-            return .fractionalWidth(0.8)
+            return .fractionalWidth(1.0)
         }
     }
     
@@ -58,7 +58,7 @@ extension DashboardSectionModel {
         guard let rowType = rowType else { return .none }
         switch rowType {
         case .customSlider:
-            return .continuous
+            return .paging
         default:
             return .none
         }
