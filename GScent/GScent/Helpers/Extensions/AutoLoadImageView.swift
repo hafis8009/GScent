@@ -13,15 +13,22 @@ typealias ImageCache = NSCache<NSString, UIImage>
 class AutoLoadImageView: UIImageView {
     var imageURLString: String?
     
-    func loadImage(fromUrl urlString: String, cache: ImageCache?) {
+    func loadImage(fromUrl urlString: String, cache: ImageCache?, clearOldImage: Bool = true, placeHolderImage: UIImage? = nil) {
         imageURLString = urlString
-        image = nil
+        
+        if clearOldImage == true {
+            image = nil
+        }
         
         guard let url = URL(string: urlString) else { return }
         
         if let imageCache = cache, let imageFromCache = imageCache.object(forKey: urlString as NSString) {
             image = imageFromCache
             return
+        }
+        
+        if placeHolderImage != nil {
+            image = placeHolderImage
         }
         
         let imageLoadTask = URLSession.shared.dataTask(with: url) { data, response, error in
