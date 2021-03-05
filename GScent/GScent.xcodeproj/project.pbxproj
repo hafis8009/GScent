@@ -15,6 +15,11 @@
 		2C3EB7C225F21CFC00F733F3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7C125F21CFC00F733F3 /* Constants.swift */; };
 		2C3EB7C425F21D0B00F733F3 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7C325F21D0B00F733F3 /* JSONHelper.swift */; };
 		2C3EB7C725F21D6C00F733F3 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7C625F21D6C00F733F3 /* String+Utils.swift */; };
+		2C3EB7CA25F2204000F733F3 /* DashboardSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7C925F2204000F733F3 /* DashboardSectionModel.swift */; };
+		2C3EB7CC25F2206200F733F3 /* ColumnItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7CB25F2206200F733F3 /* ColumnItemModel.swift */; };
+		2C3EB7CF25F2230A00F733F3 /* DashboardNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7CE25F2230A00F733F3 /* DashboardNetworkAdapter.swift */; };
+		2C3EB7D225F224D000F733F3 /* dashboardItems.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C3EB7D125F224D000F733F3 /* dashboardItems.json */; };
+		2C3EB7D325F224D000F733F3 /* dashboardItems.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C3EB7D125F224D000F733F3 /* dashboardItems.json */; };
 		2C6CCA2325F15BDA00D905B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CCA2225F15BDA00D905B9 /* AppDelegate.swift */; };
 		2C6CCA2525F15BDA00D905B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CCA2425F15BDA00D905B9 /* SceneDelegate.swift */; };
 		2C6CCA2725F15BDA00D905B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CCA2625F15BDA00D905B9 /* ViewController.swift */; };
@@ -48,6 +53,10 @@
 		2C3EB7C125F21CFC00F733F3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2C3EB7C325F21D0B00F733F3 /* JSONHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
 		2C3EB7C625F21D6C00F733F3 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
+		2C3EB7C925F2204000F733F3 /* DashboardSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardSectionModel.swift; sourceTree = "<group>"; };
+		2C3EB7CB25F2206200F733F3 /* ColumnItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnItemModel.swift; sourceTree = "<group>"; };
+		2C3EB7CE25F2230A00F733F3 /* DashboardNetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNetworkAdapter.swift; sourceTree = "<group>"; };
+		2C3EB7D125F224D000F733F3 /* dashboardItems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dashboardItems.json; sourceTree = "<group>"; };
 		2C6CCA1F25F15BDA00D905B9 /* GScent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GScent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6CCA2225F15BDA00D905B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C6CCA2425F15BDA00D905B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +123,31 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		2C3EB7C825F2202B00F733F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C3EB7C925F2204000F733F3 /* DashboardSectionModel.swift */,
+				2C3EB7CB25F2206200F733F3 /* ColumnItemModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2C3EB7CD25F222F500F733F3 /* NetworkAdapters */ = {
+			isa = PBXGroup;
+			children = (
+				2C3EB7CE25F2230A00F733F3 /* DashboardNetworkAdapter.swift */,
+			);
+			path = NetworkAdapters;
+			sourceTree = "<group>";
+		};
+		2C3EB7D025F2246400F733F3 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				2C3EB7D125F224D000F733F3 /* dashboardItems.json */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
 		2C6CCA1625F15BDA00D905B9 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +171,8 @@
 		2C6CCA2125F15BDA00D905B9 /* GScent */ = {
 			isa = PBXGroup;
 			children = (
+				2C3EB7CD25F222F500F733F3 /* NetworkAdapters */,
+				2C3EB7C825F2202B00F733F3 /* Models */,
 				2C3EB7BE25F21CCC00F733F3 /* Helpers */,
 				2C3EB7B525F21BA400F733F3 /* Network */,
 				2C6CCA2225F15BDA00D905B9 /* AppDelegate.swift */,
@@ -153,6 +189,7 @@
 		2C6CCA3825F15BDC00D905B9 /* GScentTests */ = {
 			isa = PBXGroup;
 			children = (
+				2C3EB7D025F2246400F733F3 /* Stubs */,
 				2C6CCA3925F15BDC00D905B9 /* GScentTests.swift */,
 				2C6CCA3B25F15BDC00D905B9 /* Info.plist */,
 			);
@@ -264,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C6CCA2F25F15BDC00D905B9 /* LaunchScreen.storyboard in Resources */,
+				2C3EB7D225F224D000F733F3 /* dashboardItems.json in Resources */,
 				2C6CCA2C25F15BDC00D905B9 /* Assets.xcassets in Resources */,
 				2C6CCA2A25F15BDA00D905B9 /* Main.storyboard in Resources */,
 			);
@@ -273,6 +311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C3EB7D325F224D000F733F3 /* dashboardItems.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,13 +387,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C3EB7C725F21D6C00F733F3 /* String+Utils.swift in Sources */,
+				2C3EB7CF25F2230A00F733F3 /* DashboardNetworkAdapter.swift in Sources */,
 				2C3EB7BD25F21C3300F733F3 /* Reachability.swift in Sources */,
 				2C3EB7BB25F21C0600F733F3 /* ReachabilityAdapter.swift in Sources */,
+				2C3EB7CC25F2206200F733F3 /* ColumnItemModel.swift in Sources */,
 				2C6CCA2725F15BDA00D905B9 /* ViewController.swift in Sources */,
 				2C6CCA2325F15BDA00D905B9 /* AppDelegate.swift in Sources */,
 				2C6CCA2525F15BDA00D905B9 /* SceneDelegate.swift in Sources */,
 				2C3EB7C025F21CEF00F733F3 /* CoreError.swift in Sources */,
 				2C3EB7B725F21BCF00F733F3 /* NetworkClient.swift in Sources */,
+				2C3EB7CA25F2204000F733F3 /* DashboardSectionModel.swift in Sources */,
 				2C3EB7B925F21BF300F733F3 /* NetworkEndpointModel.swift in Sources */,
 				2C3EB7C225F21CFC00F733F3 /* Constants.swift in Sources */,
 				2C3EB7C425F21D0B00F733F3 /* JSONHelper.swift in Sources */,
