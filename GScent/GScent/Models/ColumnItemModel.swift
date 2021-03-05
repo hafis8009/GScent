@@ -72,5 +72,17 @@ class TextColumnItemModel: ColumnItemModel {
 }
 
 class SliderColumnItemModel: ColumnItemModel {
+    var slides: [ImageColumnItemModel]?
+
+    private enum DecodingKeys: String, CodingKey {
+        case type
+        case slides
+    }
     
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: DecodingKeys.self)
+        slides = try? container.decode([ImageColumnItemModel].self, forKey: .slides)
+        
+        try super.init(from: decoder)
+    }
 }

@@ -42,7 +42,7 @@ class DashboardSectionModel: Decodable {
             case .text:
                 columns = try? container.decode([TextColumnItemModel].self, forKey: .columns)
             case .customSlider:
-                print("Got custom slider column")
+                columns = try? container.decode([SliderColumnItemModel].self, forKey: .columns)
             }
             
             if height == 0.0 {
