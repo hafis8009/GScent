@@ -40,7 +40,7 @@ class DashboardSectionModel: Decodable {
             case .image:
                 columns = try? container.decode([ImageColumnItemModel].self, forKey: .columns)
             case .text:
-                print("Got text column")
+                columns = try? container.decode([TextColumnItemModel].self, forKey: .columns)
             case .customSlider:
                 print("Got custom slider column")
             }

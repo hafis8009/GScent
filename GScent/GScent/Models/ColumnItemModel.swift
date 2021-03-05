@@ -44,7 +44,31 @@ class ImageColumnItemModel: ColumnItemModel {
 }
 
 class TextColumnItemModel: ColumnItemModel {
+    var content: String
+    var textAlign: NSTextAlignment
+    var textColor: UIColor
+    var fontSize: Float
+    var fontName: String
+
+    private enum DecodingKeys: String, CodingKey {
+        case type
+        case content
+        case textAlign = "text-align"
+        case textColor = "font-color"
+        case fontSize = "font-size"
+        case fontName = "font"
+    }
     
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: DecodingKeys.self)
+        content = try container.decode(String.self, forKey: .content)
+        textAlign = (try? container.decode(String.self, forKey: .textAlign))?.asTextAlignment ?? .left
+        textColor = (try? container.decode(String.self, forKey: .textColor))?.asColor ?? .black
+        fontSize = try container.decode(Float.self, forKey: .fontSize)
+        fontName = try container.decode(String.self, forKey: .fontName)
+        
+        try super.init(from: decoder)
+    }
 }
 
 class SliderColumnItemModel: ColumnItemModel {
