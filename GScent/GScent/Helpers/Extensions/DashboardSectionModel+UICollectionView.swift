@@ -12,9 +12,7 @@ import UIKit
 extension DashboardSectionModel {
     func createCollectionLayoutSection() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: layoutItemFractionalWidth, heightDimension: layoutItemFractionalHeight))
-        item.contentInsets.trailing = 0
-        item.contentInsets.bottom = 20
-        item.contentInsets.leading = 0
+        item.contentInsets = layoutInsets
 
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: layoutGroupFractionalWidth, heightDimension: layoutGroupFractionalHeight), subitems: [item])
         
@@ -64,5 +62,9 @@ extension DashboardSectionModel {
         default:
             return .none
         }
+    }
+    
+    private var layoutInsets: NSDirectionalEdgeInsets {
+        return NSDirectionalEdgeInsets(top: 0.0, leading: CGFloat(leftMargin), bottom: CGFloat(bottomMargin), trailing: CGFloat(rightMargin))
     }
 }

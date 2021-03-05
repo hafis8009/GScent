@@ -89,11 +89,11 @@ extension DashboardViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let columns = dashboardDataSource?[section].columns else {
+        guard let section = dashboardDataSource?[section] else {
             return 0
         }
         
-        return columns.count
+        return section.columnCount
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

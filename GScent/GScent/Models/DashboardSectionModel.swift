@@ -29,6 +29,17 @@ class DashboardSectionModel: Decodable {
         return type
     }
     
+    var columnCount: Int {
+        guard let rowType = rowType else { return 0 }
+        switch rowType {
+        case .customSlider:
+            guard let columns = columns, let firstItem = columns.first as? SliderColumnItemModel, let slides = firstItem.slides else { return 0 }
+            return slides.count
+        default:
+            return columns?.count ?? 0
+        }
+    }
+    
     private enum DecodingKeys: String, CodingKey {
         case leftMargin = "row-margin-left"
         case rightMargin = "row-margin-right"
