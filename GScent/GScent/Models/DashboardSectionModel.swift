@@ -15,9 +15,18 @@ class DashboardSectionModel: Decodable {
     private(set) var height: Double
     var columns: [ColumnItemModel]?
     
-    var type: ColumnItemType? {
+    var rowType: ColumnItemType? {
         guard let c = columns, let firstItem = c.first else { return nil }
         return firstItem.type
+    }
+    
+    var columnType: ColumnItemType? {
+        guard let c = columns, let firstItem = c.first else { return nil }
+        var type = firstItem.type
+        if type == .customSlider, let firstSlide = (firstItem as? SliderColumnItemModel)?.slides?.first {
+            type = firstSlide.type
+        }
+        return type
     }
     
     private enum DecodingKeys: String, CodingKey {

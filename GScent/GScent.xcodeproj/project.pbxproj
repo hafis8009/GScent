@@ -22,6 +22,9 @@
 		2C3EB7D325F224D000F733F3 /* dashboardItems.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C3EB7D125F224D000F733F3 /* dashboardItems.json */; };
 		2C3EB7D725F239E300F733F3 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7D625F239E300F733F3 /* DashboardViewController.swift */; };
 		2C3EB7D925F23A2800F733F3 /* DashboardSectionModel+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7D825F23A2800F733F3 /* DashboardSectionModel+UICollectionView.swift */; };
+		2C3EB7DB25F29C5B00F733F3 /* UIResponder+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7DA25F29C5B00F733F3 /* UIResponder+Utils.swift */; };
+		2C3EB7DE25F2A1F500F733F3 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7DD25F2A1F500F733F3 /* ImageCollectionViewCell.swift */; };
+		2C3EB7E025F2A58C00F733F3 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7DF25F2A58C00F733F3 /* TextCollectionViewCell.swift */; };
 		2C6CCA2325F15BDA00D905B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CCA2225F15BDA00D905B9 /* AppDelegate.swift */; };
 		2C6CCA2525F15BDA00D905B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CCA2425F15BDA00D905B9 /* SceneDelegate.swift */; };
 		2C6CCA2A25F15BDA00D905B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C6CCA2825F15BDA00D905B9 /* Main.storyboard */; };
@@ -60,6 +63,9 @@
 		2C3EB7D125F224D000F733F3 /* dashboardItems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dashboardItems.json; sourceTree = "<group>"; };
 		2C3EB7D625F239E300F733F3 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		2C3EB7D825F23A2800F733F3 /* DashboardSectionModel+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardSectionModel+UICollectionView.swift"; sourceTree = "<group>"; };
+		2C3EB7DA25F29C5B00F733F3 /* UIResponder+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Utils.swift"; sourceTree = "<group>"; };
+		2C3EB7DD25F2A1F500F733F3 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		2C3EB7DF25F2A58C00F733F3 /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
 		2C6CCA1F25F15BDA00D905B9 /* GScent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GScent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6CCA2225F15BDA00D905B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C6CCA2425F15BDA00D905B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 			children = (
 				2C3EB7C625F21D6C00F733F3 /* String+Utils.swift */,
 				2C3EB7D825F23A2800F733F3 /* DashboardSectionModel+UICollectionView.swift */,
+				2C3EB7DA25F29C5B00F733F3 /* UIResponder+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -162,9 +169,19 @@
 		2C3EB7D525F2399F00F733F3 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				2C3EB7DC25F2A19B00F733F3 /* Cells */,
 				2C3EB7D625F239E300F733F3 /* DashboardViewController.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		2C3EB7DC25F2A19B00F733F3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2C3EB7DD25F2A1F500F733F3 /* ImageCollectionViewCell.swift */,
+				2C3EB7DF25F2A58C00F733F3 /* TextCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		2C6CCA1625F15BDA00D905B9 = {
@@ -405,12 +422,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C3EB7DE25F2A1F500F733F3 /* ImageCollectionViewCell.swift in Sources */,
 				2C3EB7C725F21D6C00F733F3 /* String+Utils.swift in Sources */,
 				2C3EB7CF25F2230A00F733F3 /* DashboardNetworkAdapter.swift in Sources */,
 				2C3EB7BD25F21C3300F733F3 /* Reachability.swift in Sources */,
 				2C3EB7BB25F21C0600F733F3 /* ReachabilityAdapter.swift in Sources */,
 				2C3EB7CC25F2206200F733F3 /* ColumnItemModel.swift in Sources */,
 				2C3EB7D925F23A2800F733F3 /* DashboardSectionModel+UICollectionView.swift in Sources */,
+				2C3EB7E025F2A58C00F733F3 /* TextCollectionViewCell.swift in Sources */,
 				2C6CCA2325F15BDA00D905B9 /* AppDelegate.swift in Sources */,
 				2C3EB7D725F239E300F733F3 /* DashboardViewController.swift in Sources */,
 				2C6CCA2525F15BDA00D905B9 /* SceneDelegate.swift in Sources */,
@@ -419,6 +438,7 @@
 				2C3EB7CA25F2204000F733F3 /* DashboardSectionModel.swift in Sources */,
 				2C3EB7B925F21BF300F733F3 /* NetworkEndpointModel.swift in Sources */,
 				2C3EB7C225F21CFC00F733F3 /* Constants.swift in Sources */,
+				2C3EB7DB25F29C5B00F733F3 /* UIResponder+Utils.swift in Sources */,
 				2C3EB7C425F21D0B00F733F3 /* JSONHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

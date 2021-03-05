@@ -8,25 +8,31 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class DashboardViewController: UICollectionViewController {
-
+    
+    private var dashboardDataSource: [DashboardSectionModel]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        clearsSelectionOnViewWillAppear = false
+        collectionView.backgroundColor = .white
 
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
-        
         let client = NetworkClient(endpoint: Endpoints.getDashboardItems)
         let dashboardAdapter = DashboardNetworkAdapter(networkClient: client)
         dashboardAdapter.getDashboardItems() { sections, error in
-            print(sections)
+            if let error = error {
+                // Show error alert
+                return
+            }
+            
+            if let sectionItems = sections {
+                self.dashboardDataSource = sectionItems
+                self.collectionView.collectionViewLayout = UICollectionViewCompositionalLayout { (sectionNum, env)
+                -> NSCollectionLayoutSection? in
+                    return sectionItems[sectionNum].createCollectionLayoutSection()
+                }
+            }
         }
     }
 
@@ -40,26 +46,8 @@ class DashboardViewController: UICollectionViewController {
     }
     */
 
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
-        // Configure the cell
     
-        return cell
-    }
 
     // MARK: UICollectionViewDelegate
 
@@ -92,4 +80,41 @@ class DashboardViewController: UICollectionViewController {
     }
     */
 
+}
+
+// MARK: UICollectionViewDataSource
+extension DashboardViewController {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return dashboardDataSource?.count ?? 0
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let columns = dashboardDataSource?[section].columns else {
+            return 0
+        }
+        
+        return columns.count
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let sectionModel = dashboardDataSource![indexPath.section]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: sectionModel.cellID, for: indexPath)
+        
+        cell.contentView.backgroundColor = .white
+        return cell
+    }
+}
+
+private extension DashboardSectionModel {
+    var cellID: String {
+        guard let type = columnType else { return "" }
+        switch type {
+        case .image:
+            return ImageCollectionViewCell.identifier
+        case .text:
+            return TextCollectionViewCell.identifier
+        default:
+            return ImageCollectionViewCell.identifier
+        }
+    }
 }

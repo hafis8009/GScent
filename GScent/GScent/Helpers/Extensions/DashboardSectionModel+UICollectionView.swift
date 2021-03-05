@@ -10,7 +10,16 @@ import Foundation
 import UIKit
 
 extension DashboardSectionModel {
-    func createCollectionLayoutSection() -> NSCollectionLayoutSection? {
-        return nil
+    func createCollectionLayoutSection() -> NSCollectionLayoutSection {
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1/1), heightDimension: .fractionalHeight(1)))
+        item.contentInsets.trailing = 0
+        item.contentInsets.bottom = 20
+        item.contentInsets.leading = 0
+
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(200)), subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        
+        return section
     }
 }
