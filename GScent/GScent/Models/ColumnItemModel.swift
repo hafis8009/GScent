@@ -77,7 +77,7 @@ class TextColumnItemModel: ColumnItemModel {
 }
 
 class SliderColumnItemModel: ColumnItemModel {
-    var slides: [ImageColumnItemModel]?
+    var slides: [ColumnItemModel]?
 
     private enum DecodingKeys: String, CodingKey {
         case type
@@ -86,7 +86,13 @@ class SliderColumnItemModel: ColumnItemModel {
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: DecodingKeys.self)
-        slides = try? container.decode([ImageColumnItemModel].self, forKey: .slides)
+        if let tempSlides = try? container.decode([ColumnItemModel].self, forKey: .slides), let firstSlide = tempSlides.first {
+            if firstSlide.type == .image {
+                slides = try? container.decode([ImageColumnItemModel].self, forKey: .slides)
+            } else if firstSlide.type == .text {
+                slides = try? container.decode([TextColumnItemModel].self, forKey: .slides)
+            }
+        }
         
         try super.init(from: decoder)
     }
