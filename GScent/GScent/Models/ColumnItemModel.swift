@@ -49,6 +49,11 @@ class TextColumnItemModel: ColumnItemModel {
     var textColor: UIColor
     var fontSize: Float
     var fontName: String
+    var background: BackgroundProperty?
+    
+    var font: UIFont? {
+        return UIFont(name: fontName, size: CGFloat(fontSize))
+    }
 
     private enum DecodingKeys: String, CodingKey {
         case type
@@ -62,7 +67,7 @@ class TextColumnItemModel: ColumnItemModel {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: DecodingKeys.self)
         content = try container.decode(String.self, forKey: .content)
-        textAlign = (try? container.decode(String.self, forKey: .textAlign))?.asTextAlignment ?? .left
+        textAlign = (try? container.decode(String.self, forKey: .textAlign))?.asTextAlignment ?? .center
         textColor = (try? container.decode(String.self, forKey: .textColor))?.asColor ?? .black
         fontSize = try container.decode(Float.self, forKey: .fontSize)
         fontName = try container.decode(String.self, forKey: .fontName)
@@ -84,5 +89,18 @@ class SliderColumnItemModel: ColumnItemModel {
         slides = try? container.decode([ImageColumnItemModel].self, forKey: .slides)
         
         try super.init(from: decoder)
+    }
+}
+
+class BackgroundProperty {
+    var color: UIColor?
+    
+    private enum DecodingKeys: String, CodingKey {
+        case color
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: DecodingKeys.self)
+        color = (try? container.decode(String.self, forKey: .color))?.asColor ?? .white
     }
 }

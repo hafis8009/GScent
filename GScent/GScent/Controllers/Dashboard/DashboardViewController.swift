@@ -27,58 +27,29 @@ class DashboardViewController: UICollectionViewController {
             }
             
             if let sectionItems = sections {
+                self.collectionView.register(PageIndicatorFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: PageIndicatorFooterView.identifier)
+
                 self.dashboardDataSource = sectionItems
                 self.collectionView.collectionViewLayout = UICollectionViewCompositionalLayout { (sectionNum, env)
                 -> NSCollectionLayoutSection? in
-                    return sectionItems[sectionNum].createCollectionLayoutSection()
+                    let collectionLayoutSection = sectionItems[sectionNum].createCollectionLayoutSection()
+                    collectionLayoutSection.visibleItemsInvalidationHandler = { [weak self] (items, offset, env) -> Void in
+                        guard let self = self,
+                            let lastItem = items.last,
+                            let footerView = self.collectionView.supplementaryView(forElementKind:UICollectionView.elementKindSectionFooter, at: IndexPath(row: 0, section: lastItem.indexPath.section)) as? PageIndicatorFooterView else { return }
+                        
+                                print("Did start transition")
+                                for item in items {
+                                    print("Section=\(item.indexPath.section) and Row=\(item.indexPath.row)")
+                                }
+                                footerView.pageControl.currentPage = lastItem.indexPath.row
+                        print(footerView)
+                            }
+                    return collectionLayoutSection
                 }
             }
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    
-    
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
 
 }
 
@@ -105,6 +76,12 @@ extension DashboardViewController {
         }
         
         return cell
+    }
+        
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let footerView: PageIndicatorFooterView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: PageIndicatorFooterView.identifier, for: indexPath) as! PageIndicatorFooterView
+        footerView.pageControl.numberOfPages = dashboardDataSource?[indexPath.section].columnCount ?? 1
+        return footerView
     }
 }
 

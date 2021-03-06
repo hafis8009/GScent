@@ -27,6 +27,11 @@
 		2C3EB7E025F2A58C00F733F3 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7DF25F2A58C00F733F3 /* TextCollectionViewCell.swift */; };
 		2C3EB7E225F2BDB500F733F3 /* AutoLoadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7E125F2BDB500F733F3 /* AutoLoadImageView.swift */; };
 		2C3EB7E425F2CBFD00F733F3 /* CollectionViewCellCustomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7E325F2CBFD00F733F3 /* CollectionViewCellCustomizable.swift */; };
+		2C3EB7E625F2DF0200F733F3 /* UIFont+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7E525F2DF0200F733F3 /* UIFont+Utils.swift */; };
+		2C3EB7E825F2E14700F733F3 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7E725F2E14700F733F3 /* UIColor+Utils.swift */; };
+		2C3EB7EC25F3871600F733F3 /* CustomView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7EB25F3871600F733F3 /* CustomView+Utils.swift */; };
+		2C3EB7EF25F388C000F733F3 /* PageIndicatorFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7ED25F388C000F733F3 /* PageIndicatorFooterView.swift */; };
+		2C3EB7F025F388C000F733F3 /* PageIndicatorFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3EB7EE25F388C000F733F3 /* PageIndicatorFooterView.xib */; };
 		2C6CCA2325F15BDA00D905B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CCA2225F15BDA00D905B9 /* AppDelegate.swift */; };
 		2C6CCA2525F15BDA00D905B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CCA2425F15BDA00D905B9 /* SceneDelegate.swift */; };
 		2C6CCA2A25F15BDA00D905B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C6CCA2825F15BDA00D905B9 /* Main.storyboard */; };
@@ -70,6 +75,11 @@
 		2C3EB7DF25F2A58C00F733F3 /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
 		2C3EB7E125F2BDB500F733F3 /* AutoLoadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoadImageView.swift; sourceTree = "<group>"; };
 		2C3EB7E325F2CBFD00F733F3 /* CollectionViewCellCustomizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellCustomizable.swift; sourceTree = "<group>"; };
+		2C3EB7E525F2DF0200F733F3 /* UIFont+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Utils.swift"; sourceTree = "<group>"; };
+		2C3EB7E725F2E14700F733F3 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
+		2C3EB7EB25F3871600F733F3 /* CustomView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomView+Utils.swift"; sourceTree = "<group>"; };
+		2C3EB7ED25F388C000F733F3 /* PageIndicatorFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicatorFooterView.swift; sourceTree = "<group>"; };
+		2C3EB7EE25F388C000F733F3 /* PageIndicatorFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageIndicatorFooterView.xib; sourceTree = "<group>"; };
 		2C6CCA1F25F15BDA00D905B9 /* GScent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GScent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6CCA2225F15BDA00D905B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C6CCA2425F15BDA00D905B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +144,9 @@
 				2C3EB7D825F23A2800F733F3 /* DashboardSectionModel+UICollectionView.swift */,
 				2C3EB7DA25F29C5B00F733F3 /* UIResponder+Utils.swift */,
 				2C3EB7E125F2BDB500F733F3 /* AutoLoadImageView.swift */,
+				2C3EB7E525F2DF0200F733F3 /* UIFont+Utils.swift */,
+				2C3EB7E725F2E14700F733F3 /* UIColor+Utils.swift */,
+				2C3EB7EB25F3871600F733F3 /* CustomView+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -185,6 +198,8 @@
 			children = (
 				2C3EB7DD25F2A1F500F733F3 /* ImageCollectionViewCell.swift */,
 				2C3EB7DF25F2A58C00F733F3 /* TextCollectionViewCell.swift */,
+				2C3EB7ED25F388C000F733F3 /* PageIndicatorFooterView.swift */,
+				2C3EB7EE25F388C000F733F3 /* PageIndicatorFooterView.xib */,
 				2C3EB7E325F2CBFD00F733F3 /* CollectionViewCellCustomizable.swift */,
 			);
 			path = Cells;
@@ -345,6 +360,7 @@
 				2C6CCA2F25F15BDC00D905B9 /* LaunchScreen.storyboard in Resources */,
 				2C3EB7D225F224D000F733F3 /* dashboardItems.json in Resources */,
 				2C6CCA2C25F15BDC00D905B9 /* Assets.xcassets in Resources */,
+				2C3EB7F025F388C000F733F3 /* PageIndicatorFooterView.xib in Resources */,
 				2C6CCA2A25F15BDA00D905B9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +447,7 @@
 				2C3EB7DE25F2A1F500F733F3 /* ImageCollectionViewCell.swift in Sources */,
 				2C3EB7C725F21D6C00F733F3 /* String+Utils.swift in Sources */,
 				2C3EB7CF25F2230A00F733F3 /* DashboardNetworkAdapter.swift in Sources */,
+				2C3EB7EC25F3871600F733F3 /* CustomView+Utils.swift in Sources */,
 				2C3EB7BD25F21C3300F733F3 /* Reachability.swift in Sources */,
 				2C3EB7BB25F21C0600F733F3 /* ReachabilityAdapter.swift in Sources */,
 				2C3EB7CC25F2206200F733F3 /* ColumnItemModel.swift in Sources */,
@@ -441,9 +458,12 @@
 				2C6CCA2325F15BDA00D905B9 /* AppDelegate.swift in Sources */,
 				2C3EB7D725F239E300F733F3 /* DashboardViewController.swift in Sources */,
 				2C6CCA2525F15BDA00D905B9 /* SceneDelegate.swift in Sources */,
+				2C3EB7E625F2DF0200F733F3 /* UIFont+Utils.swift in Sources */,
 				2C3EB7C025F21CEF00F733F3 /* CoreError.swift in Sources */,
 				2C3EB7B725F21BCF00F733F3 /* NetworkClient.swift in Sources */,
 				2C3EB7CA25F2204000F733F3 /* DashboardSectionModel.swift in Sources */,
+				2C3EB7E825F2E14700F733F3 /* UIColor+Utils.swift in Sources */,
+				2C3EB7EF25F388C000F733F3 /* PageIndicatorFooterView.swift in Sources */,
 				2C3EB7B925F21BF300F733F3 /* NetworkEndpointModel.swift in Sources */,
 				2C3EB7C225F21CFC00F733F3 /* Constants.swift in Sources */,
 				2C3EB7DB25F29C5B00F733F3 /* UIResponder+Utils.swift in Sources */,
