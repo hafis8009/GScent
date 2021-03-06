@@ -81,6 +81,9 @@ extension DashboardSectionModel {
             return []
         }
         
-        return [NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(30)), elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottomLeading)]
+        return [NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1),
+                                                                              heightDimension: .absolute(30)),
+                                                            elementKind: UICollectionView.elementKindSectionFooter,
+                                                            alignment: .bottomLeading)]
     }
 }

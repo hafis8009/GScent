@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// swiftlint:disable force_cast
 class DashboardViewController: UICollectionViewController {
     
     private var dashboardDataSource: [DashboardSectionModel]?
@@ -27,7 +27,9 @@ class DashboardViewController: UICollectionViewController {
             }
             
             if let sectionItems = sections {
-                self.collectionView.register(PageIndicatorFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: PageIndicatorFooterView.identifier)
+                self.collectionView.register(PageIndicatorFooterView.self,
+                                             forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+                                             withReuseIdentifier: PageIndicatorFooterView.identifier)
 
                 self.dashboardDataSource = sectionItems
                 self.collectionView.collectionViewLayout = UICollectionViewCompositionalLayout { (sectionNum, env)
@@ -36,7 +38,8 @@ class DashboardViewController: UICollectionViewController {
                     collectionLayoutSection.visibleItemsInvalidationHandler = { [weak self] (items, offset, env) -> Void in
                         guard let self = self,
                             let lastItem = items.last,
-                            let footerView = self.collectionView.supplementaryView(forElementKind:UICollectionView.elementKindSectionFooter, at: IndexPath(row: 0, section: lastItem.indexPath.section)) as? PageIndicatorFooterView else { return }
+                            let footerView = self.collectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionFooter,
+                                                                                   at: IndexPath(row: 0, section: lastItem.indexPath.section)) as? PageIndicatorFooterView else { return }
                         
                                 print("Did start transition")
                                 for item in items {
@@ -79,7 +82,8 @@ extension DashboardViewController {
     }
         
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let footerView: PageIndicatorFooterView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: PageIndicatorFooterView.identifier, for: indexPath) as! PageIndicatorFooterView
+        let footerView: PageIndicatorFooterView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: PageIndicatorFooterView.identifier,
+                                                                                                  for: indexPath) as! PageIndicatorFooterView
         footerView.pageControl.numberOfPages = dashboardDataSource?[indexPath.section].columnCount ?? 1
         return footerView
     }
