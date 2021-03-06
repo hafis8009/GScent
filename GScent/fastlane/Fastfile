@@ -1,0 +1,71 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+
+
+default_platform(:ios)
+
+platform :ios do
+
+# -------------------------------------------------------------------------------------------
+  desc "Linting"
+  lane :lint do
+    swiftlint(
+      mode: :lint,                                    # SwiftLint mode: :lint (default) or :autocorrect
+      executable: "./Pods/SwiftLint/swiftlint",       # The SwiftLint binary path (optional). Important if you've installed it via CocoaPods
+      output_file: "./build/swiftlint.result.xml",   # The path of the output file (optional)
+      reporter: "checkstyle",                         # The custom reporter to use (optional)
+      config_file: ".swiftlint.yml",               # The path of the configuration file (optional)
+      ignore_exit_status: false,                     # Allow fastlane to continue even if SwiftLint returns a non-zero exit status (Default: false)
+    )
+  end
+
+  desc "Run tests and code coverage"
+  lane :tests do
+    # https://docs.fastlane.tools/actions/scan/
+    scan(
+      workspace: "GScent.xcworkspace",
+      scheme: "GScent",
+      devices: ["iPhone 11"],
+      code_coverage: true,
+      clean: true,
+      skip_build: false,
+      output_directory: "build",
+      output_types: "html,junit,json-compilation-database",
+      output_style: "basic",
+      buildlog_path: "build",
+      derived_data_path: "build",
+    )
+
+    code_coverage
+  end
+
+  desc "Private Lane: Code coverage"
+  private_lane :code_coverage do
+    # https://docs.fastlane.tools/actions/slather/
+    slather(
+      build_directory: "build",
+      scheme: "GScent",
+      workspace: "GScent.xcworkspace",
+      proj: "GScent.xcodeproj",
+      output_directory: "slather_output",
+      jenkins: true, 
+      verbose: true,
+      html: true,
+      binary_basename: 'GScent',
+      ignore:[
+        'Pods/*',
+        'GScentTests/*'
+      ]
+    )
+  end
+
+end
