@@ -34,6 +34,7 @@
 		2C3EB7F025F388C000F733F3 /* PageIndicatorFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3EB7EE25F388C000F733F3 /* PageIndicatorFooterView.xib */; };
 		2C3EB7F525F3C2E600F733F3 /* DashboardNetworkAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7F425F3C2E600F733F3 /* DashboardNetworkAdapterTests.swift */; };
 		2C3EB7F725F3C32400F733F3 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7F625F3C32400F733F3 /* StringTests.swift */; };
+		2C3EB7FA25F3D1ED00F733F3 /* UIStoryBoard+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7F925F3D1ED00F733F3 /* UIStoryBoard+Utils.swift */; };
 		2C6CCA2325F15BDA00D905B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CCA2225F15BDA00D905B9 /* AppDelegate.swift */; };
 		2C6CCA2525F15BDA00D905B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CCA2425F15BDA00D905B9 /* SceneDelegate.swift */; };
 		2C6CCA2A25F15BDA00D905B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C6CCA2825F15BDA00D905B9 /* Main.storyboard */; };
@@ -84,6 +85,7 @@
 		2C3EB7EE25F388C000F733F3 /* PageIndicatorFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageIndicatorFooterView.xib; sourceTree = "<group>"; };
 		2C3EB7F425F3C2E600F733F3 /* DashboardNetworkAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNetworkAdapterTests.swift; sourceTree = "<group>"; };
 		2C3EB7F625F3C32400F733F3 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
+		2C3EB7F925F3D1ED00F733F3 /* UIStoryBoard+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryBoard+Utils.swift"; sourceTree = "<group>"; };
 		2C6CCA1F25F15BDA00D905B9 /* GScent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GScent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6CCA2225F15BDA00D905B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C6CCA2425F15BDA00D905B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				2C3EB7E525F2DF0200F733F3 /* UIFont+Utils.swift */,
 				2C3EB7E725F2E14700F733F3 /* UIColor+Utils.swift */,
 				2C3EB7EB25F3871600F733F3 /* CustomView+Utils.swift */,
+				2C3EB7F925F3D1ED00F733F3 /* UIStoryBoard+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				2C3EB7B725F21BCF00F733F3 /* NetworkClient.swift in Sources */,
 				2C3EB7CA25F2204000F733F3 /* DashboardSectionModel.swift in Sources */,
 				2C3EB7E825F2E14700F733F3 /* UIColor+Utils.swift in Sources */,
+				2C3EB7FA25F3D1ED00F733F3 /* UIStoryBoard+Utils.swift in Sources */,
 				2C3EB7EF25F388C000F733F3 /* PageIndicatorFooterView.swift in Sources */,
 				2C3EB7B925F21BF300F733F3 /* NetworkEndpointModel.swift in Sources */,
 				2C3EB7C225F21CFC00F733F3 /* Constants.swift in Sources */,
