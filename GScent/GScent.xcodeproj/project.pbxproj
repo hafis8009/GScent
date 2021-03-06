@@ -32,6 +32,8 @@
 		2C3EB7EC25F3871600F733F3 /* CustomView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7EB25F3871600F733F3 /* CustomView+Utils.swift */; };
 		2C3EB7EF25F388C000F733F3 /* PageIndicatorFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7ED25F388C000F733F3 /* PageIndicatorFooterView.swift */; };
 		2C3EB7F025F388C000F733F3 /* PageIndicatorFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3EB7EE25F388C000F733F3 /* PageIndicatorFooterView.xib */; };
+		2C3EB7F525F3C2E600F733F3 /* DashboardNetworkAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7F425F3C2E600F733F3 /* DashboardNetworkAdapterTests.swift */; };
+		2C3EB7F725F3C32400F733F3 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EB7F625F3C32400F733F3 /* StringTests.swift */; };
 		2C6CCA2325F15BDA00D905B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CCA2225F15BDA00D905B9 /* AppDelegate.swift */; };
 		2C6CCA2525F15BDA00D905B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CCA2425F15BDA00D905B9 /* SceneDelegate.swift */; };
 		2C6CCA2A25F15BDA00D905B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C6CCA2825F15BDA00D905B9 /* Main.storyboard */; };
@@ -80,6 +82,8 @@
 		2C3EB7EB25F3871600F733F3 /* CustomView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomView+Utils.swift"; sourceTree = "<group>"; };
 		2C3EB7ED25F388C000F733F3 /* PageIndicatorFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicatorFooterView.swift; sourceTree = "<group>"; };
 		2C3EB7EE25F388C000F733F3 /* PageIndicatorFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageIndicatorFooterView.xib; sourceTree = "<group>"; };
+		2C3EB7F425F3C2E600F733F3 /* DashboardNetworkAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNetworkAdapterTests.swift; sourceTree = "<group>"; };
+		2C3EB7F625F3C32400F733F3 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		2C6CCA1F25F15BDA00D905B9 /* GScent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GScent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6CCA2225F15BDA00D905B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C6CCA2425F15BDA00D905B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +209,31 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		2C3EB7F125F3C27400F733F3 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2C3EB7F325F3C29D00F733F3 /* Extensions */,
+				2C3EB7F225F3C28D00F733F3 /* NetworkAdapters */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		2C3EB7F225F3C28D00F733F3 /* NetworkAdapters */ = {
+			isa = PBXGroup;
+			children = (
+				2C3EB7F425F3C2E600F733F3 /* DashboardNetworkAdapterTests.swift */,
+			);
+			path = NetworkAdapters;
+			sourceTree = "<group>";
+		};
+		2C3EB7F325F3C29D00F733F3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2C3EB7F625F3C32400F733F3 /* StringTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		2C6CCA1625F15BDA00D905B9 = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +275,7 @@
 		2C6CCA3825F15BDC00D905B9 /* GScentTests */ = {
 			isa = PBXGroup;
 			children = (
+				2C3EB7F125F3C27400F733F3 /* Tests */,
 				2C3EB7D025F2246400F733F3 /* Stubs */,
 				2C6CCA3925F15BDC00D905B9 /* GScentTests.swift */,
 				2C6CCA3B25F15BDC00D905B9 /* Info.plist */,
@@ -476,6 +506,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C6CCA3A25F15BDC00D905B9 /* GScentTests.swift in Sources */,
+				2C3EB7F725F3C32400F733F3 /* StringTests.swift in Sources */,
+				2C3EB7F525F3C2E600F733F3 /* DashboardNetworkAdapterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
