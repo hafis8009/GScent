@@ -15,6 +15,6 @@ class ImageCollectionViewCell: UICollectionViewCell {
 extension ImageCollectionViewCell: CollectionViewCellCustomizable {
     func customize(with columnItem: ColumnItemModel, indexPath: IndexPath) {
         guard let imageModel = columnItem as? ImageColumnItemModel else { return }
-        imageView.loadImage(fromUrl: imageModel.imageUrl!.absoluteString, cache: nil, clearOldImage: false)
+        imageView.loadImage(fromUrl: imageModel.imageUrl!.absoluteString, cache: nil, clearOldImage: false, placeHolderImage: UIImage(named: "WaterMark"))
     }
 }

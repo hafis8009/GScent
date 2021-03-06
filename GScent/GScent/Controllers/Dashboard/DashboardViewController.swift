@@ -40,11 +40,6 @@ class DashboardViewController: UICollectionViewController {
                             let lastItem = items.last,
                             let footerView = self.collectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionFooter,
                                                                                    at: IndexPath(row: 0, section: lastItem.indexPath.section)) as? PageIndicatorFooterView else { return }
-                        
-                                print("Did start transition")
-                                for item in items {
-                                    print("Section=\(item.indexPath.section) and Row=\(item.indexPath.row)")
-                                }
                                 footerView.pageControl.currentPage = lastItem.indexPath.row
                         print(footerView)
                             }
@@ -86,6 +81,14 @@ extension DashboardViewController {
                                                                                                   for: indexPath) as! PageIndicatorFooterView
         footerView.pageControl.numberOfPages = dashboardDataSource?[indexPath.section].columnCount ?? 1
         return footerView
+    }
+}
+
+// MARK: UICollectionViewDelegate
+extension DashboardViewController {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let nextVC = UIStoryboard.Name.main.instance.getViewController(DashboardViewController.identifier)
+        navigationController?.pushViewController(nextVC, animated: true)
     }
 }
 
