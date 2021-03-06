@@ -16,12 +16,12 @@ class DashboardSectionModel: Decodable {
     var columns: [ColumnItemModel]?
     
     var rowType: ColumnItemType? {
-        guard let c = columns, let firstItem = c.first else { return nil }
+        guard let columns = columns, let firstItem = columns.first else { return nil }
         return firstItem.type
     }
     
     var columnType: ColumnItemType? {
-        guard let c = columns, let firstItem = c.first else { return nil }
+        guard let columns = columns, let firstItem = columns.first else { return nil }
         var type = firstItem.type
         if type == .customSlider, let firstSlide = (firstItem as? SliderColumnItemModel)?.slides?.first {
             type = firstSlide.type
@@ -55,7 +55,7 @@ class DashboardSectionModel: Decodable {
         bottomMargin = (try? container.decode(String.self, forKey: .bottomMargin))?.pixelValue ?? 0.0
         height = (try? container.decode(String.self, forKey: .height))?.pixelValue ?? 0.0
         
-        if let tempColumns = try? container.decode([ColumnItemModel].self, forKey: .columns), tempColumns.count > 0, let firstItem = tempColumns.first {
+        if let tempColumns = try? container.decode([ColumnItemModel].self, forKey: .columns), !tempColumns.isEmpty, let firstItem = tempColumns.first {
             switch firstItem.type {
             case .image:
                 columns = try? container.decode([ImageColumnItemModel].self, forKey: .columns)
