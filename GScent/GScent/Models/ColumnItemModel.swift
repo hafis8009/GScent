@@ -67,7 +67,7 @@ class TextColumnItemModel: ColumnItemModel {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: DecodingKeys.self)
         content = try container.decode(String.self, forKey: .content)
-        textAlign = (try? container.decode(String.self, forKey: .textAlign))?.asTextAlignment ?? .left
+        textAlign = (try? container.decode(String.self, forKey: .textAlign))?.asTextAlignment ?? .center
         textColor = (try? container.decode(String.self, forKey: .textColor))?.asColor ?? .black
         fontSize = try container.decode(Float.self, forKey: .fontSize)
         fontName = try container.decode(String.self, forKey: .fontName)

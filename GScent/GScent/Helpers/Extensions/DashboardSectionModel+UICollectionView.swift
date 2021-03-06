@@ -12,12 +12,16 @@ import UIKit
 extension DashboardSectionModel {
     func createCollectionLayoutSection() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: layoutItemFractionalWidth, heightDimension: layoutItemFractionalHeight))
-        item.contentInsets = layoutInsets
 
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: layoutGroupFractionalWidth, heightDimension: layoutGroupFractionalHeight), subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = layoutInsets
+        
         section.orthogonalScrollingBehavior = scrollingBehaviour
+        
+        // need to move this code
+        section.boundarySupplementaryItems = supplementaryFooterItems()
         
         return section
     }
@@ -66,5 +70,17 @@ extension DashboardSectionModel {
     
     private var layoutInsets: NSDirectionalEdgeInsets {
         return NSDirectionalEdgeInsets(top: 0.0, leading: CGFloat(leftMargin), bottom: CGFloat(bottomMargin), trailing: CGFloat(rightMargin))
+    }
+    
+    private var layoutEdgeSpacing: NSCollectionLayoutEdgeSpacing {
+        return NSCollectionLayoutEdgeSpacing(leading: .fixed(10), top: .fixed(0), trailing: .fixed(10), bottom: .fixed(0))
+    }
+    
+    private func supplementaryFooterItems() -> [NSCollectionLayoutBoundarySupplementaryItem] {
+        guard let rowType = rowType, rowType == .customSlider else {
+            return []
+        }
+        
+        return [NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(30)), elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottomLeading)]
     }
 }
